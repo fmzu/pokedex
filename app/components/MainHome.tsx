@@ -1,18 +1,23 @@
 "use client"
-import { Box, Stack } from "@chakra-ui/react"
+import { SimpleGrid, Stack } from "@chakra-ui/react"
 import { FC } from "react"
+import { BoxPokemon } from "app/components/BoxPokemon"
 
 type Props = {
-  results: { name: string }[]
+  results: {
+    id: number
+    name: string
+  }[]
 }
 
 export const MainHome: FC<Props> = (props) => {
-  console.log(props)
   return (
-    <Stack>
-      {props.results.map((result) => (
-        <Box key={result.name}>{result.name}</Box>
-      ))}
+    <Stack p={4}>
+      <SimpleGrid minChildWidth="120px" spacing="16px">
+        {props.results.map((result) => (
+          <BoxPokemon key={result.id} id={result.id} name={result.name} />
+        ))}
+      </SimpleGrid>
     </Stack>
   )
 }
