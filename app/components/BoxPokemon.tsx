@@ -1,5 +1,5 @@
 "use client"
-import { Box, Image, Stack, Text } from "@chakra-ui/react"
+import { Box, HStack, Image, Stack, Text } from "@chakra-ui/react"
 import { FC, useState } from "react"
 
 type Props = {
@@ -15,17 +15,19 @@ export const BoxPokemon: FC<Props> = (props) => {
     : `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/${props.id}.png`
   console.log("aaa", isActive)
   return (
-    <Stack spacing={0}>
-      <Box
-        onMouseEnter={() => {
-          setActive(true)
-        }}
-        onMouseLeave={() => {
-          setActive(false)
-        }}
-      >
-        <Image alt={props.name} src={imageURL} />
-      </Box>
+    <Stack spacing={1}>
+      <HStack justifyContent={"center"}>
+        <Box
+          onMouseEnter={() => {
+            setActive(true)
+          }}
+          onMouseLeave={() => {
+            setActive(false)
+          }}
+        >
+          <Image alt={props.name} src={imageURL} />
+        </Box>
+      </HStack>
       <Text textAlign={"center"} fontWeight={"bold"} letterSpacing={1}>
         {props.name}
       </Text>
