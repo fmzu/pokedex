@@ -14,6 +14,7 @@ export const BoxPokemon: FC<Props> = (props) => {
     ? `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${props.id}.png`
     : `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/${props.id}.png`
   console.log("aaa", isActive)
+
   return (
     <Stack spacing={1}>
       <HStack justifyContent={"center"}>
