@@ -1,4 +1,4 @@
-import { MainHome } from "app/components/MainHome"
+import { MainHome } from "app/components/main-home"
 
 const HomePage = async () => {
   const resp = await fetch("https://beta.pokeapi.co/graphql/v1beta", {

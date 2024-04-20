@@ -1,9 +1,9 @@
 "use client";
 import { Button, HStack, SimpleGrid, Stack } from "@chakra-ui/react";
 import type { FC } from "react";
-import { BoxPokemonCard } from "app/components/BoxPokemonCard";
-import { HomeHeader } from "app/components/HomeHeader";
-import { HomeFooter } from "app/components/HomeFooter";
+import { BoxPokemonCard } from "app/components/box-pokemon-card";
+import { HomeHeader } from "app/components/home-header";
+import { HomeFooter } from "app/components/home-footer";
 
 type Props = {
 	results: {
