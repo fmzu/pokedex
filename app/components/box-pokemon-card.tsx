@@ -17,6 +17,7 @@ import { BoxPokemonModal } from "./pokemon-modal"
 type Props = {
   id: number
   name: string
+  height: number
 }
 
 export const BoxPokemonCard: FC<Props> = (props) => {
@@ -66,6 +67,7 @@ export const BoxPokemonCard: FC<Props> = (props) => {
         onClose={onClose}
         id={props.id}
         name={props.name}
+        height={props.height}
       />
     </>
   )

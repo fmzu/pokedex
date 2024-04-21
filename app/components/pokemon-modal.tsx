@@ -9,6 +9,7 @@ import {
   ModalContent,
   ModalFooter,
   ModalOverlay,
+  Stack,
   Text,
 } from "@chakra-ui/react"
 import type { FC } from "react"
@@ -18,6 +19,7 @@ type Props = {
   onClose: () => void
   id: number
   name: string
+  height: number
 }
 
 export const BoxPokemonModal: FC<Props> = (props) => {
@@ -28,23 +30,23 @@ export const BoxPokemonModal: FC<Props> = (props) => {
   return (
     <Modal isOpen={props.isOpen} onClose={props.onClose}>
       <ModalOverlay />
-      <ModalContent>
+      <ModalContent p={8}>
         <ModalCloseButton />
         <ModalBody>
-          <HStack justifyContent={"center"}>
+          <Stack spacing={0}>
+            <Text fontSize={"sm"}>{`No.${props.id}`}</Text>
             <Text fontWeight={"bold"} fontSize={"2xl"}>
               {props.name}
             </Text>
-          </HStack>
+          </Stack>
           <HStack justifyContent={"center"}>
             <Image alt={props.name} src={imageURL} />
             <Image alt={props.name} src={backImageURL} />
+            <Text fontSize={"sm"}>{props.height}</Text>
           </HStack>
         </ModalBody>
         <ModalFooter>
-          <Button colorScheme="blue" mr={3} onClick={props.onClose}>
-            {"Close"}
-          </Button>
+          <Button onClick={props.onClose}>{"Close"}</Button>
         </ModalFooter>
       </ModalContent>
     </Modal>

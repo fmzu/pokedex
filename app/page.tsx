@@ -9,6 +9,7 @@ const HomePage = async () => {
         pokemon_v2_pokemon(limit: 151) {
           id
           name
+          height
         }
       }
       `,
